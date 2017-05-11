@@ -10,7 +10,7 @@ import javax.crypto.spec.PBEParameterSpec;
 public class FileDecryption {
 	public static void main(String[] args) throws Exception {
 
-		String password = "javapapers";
+		String password = "FileDecryption";
 		PBEKeySpec pbeKeySpec = new PBEKeySpec(password.toCharArray());
 		SecretKeyFactory secretKeyFactory = SecretKeyFactory
 				.getInstance("PBEWithMD5AndTripleDES");
@@ -31,6 +31,8 @@ public class FileDecryption {
 			byte[] output = cipher.update(in, 0, read);
 			if (output != null)
 				fos.write(output);
+			
+			
 		}
 
 		byte[] output = cipher.doFinal();
